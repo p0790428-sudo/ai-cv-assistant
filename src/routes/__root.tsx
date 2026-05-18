@@ -72,14 +72,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Hireform — AI CV Analysis for Recruiters" },
+      {
+        name: "description",
+        content:
+          "Upload a CV and get an instant AI score, skill breakdown, and improvement tips. Smart recruitment, powered by AI.",
+      },
+      { name: "author", content: "Hireform" },
+      { property: "og:title", content: "Hireform — AI CV Analysis" },
+      {
+        property: "og:description",
+        content: "Score candidates and improve CVs in seconds with AI.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
