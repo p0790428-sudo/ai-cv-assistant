@@ -6,6 +6,7 @@ import {
   Briefcase,
   GraduationCap,
   Lightbulb,
+  LogOut,
   RefreshCw,
   Sparkles,
   Target,
@@ -21,8 +22,9 @@ import { ScoreGauge } from "@/components/ScoreGauge";
 import { SectionCard, TagList } from "@/components/SectionCard";
 import { extractPdfText } from "@/lib/pdf";
 import { analyzeCV, type CVAnalysis } from "@/lib/cv.functions";
+import { useAuth } from "@/hooks/use-auth";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   component: Index,
 });
 
@@ -74,6 +76,7 @@ function Index() {
 }
 
 function Header() {
+  const { user, signOut } = useAuth();
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
       <div className="flex items-center gap-2.5">
@@ -85,12 +88,18 @@ function Header() {
           <p className="text-[11px] text-muted-foreground">AI Recruitment Assistant</p>
         </div>
       </div>
-      <a
-        href="#"
-        className="hidden rounded-full border border-border bg-card/50 px-4 py-1.5 text-xs text-muted-foreground transition hover:text-foreground sm:block"
-      >
-        v1 · powered by Lovable AI
-      </a>
+      <div className="flex items-center gap-3">
+        <span className="hidden text-xs text-muted-foreground sm:inline">
+          {user?.email}
+        </span>
+        <button
+          onClick={() => signOut()}
+          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/50 px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
+        >
+          <LogOut className="h-3.5 w-3.5" />
+          Sign out
+        </button>
+      </div>
     </header>
   );
 }
