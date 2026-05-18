@@ -23,13 +23,6 @@ import { SectionCard, TagList } from "@/components/SectionCard";
 import { extractPdfText } from "@/lib/pdf";
 import { analyzeCV, type CVAnalysis } from "@/lib/cv.functions";
 import { useAuth } from "@/hooks/use-auth";
-import { toast } from "sonner";
-import { Toaster } from "@/components/ui/sonner";
-import { CVUpload } from "@/components/CVUpload";
-import { ScoreGauge } from "@/components/ScoreGauge";
-import { SectionCard, TagList } from "@/components/SectionCard";
-import { extractPdfText } from "@/lib/pdf";
-import { analyzeCV, type CVAnalysis } from "@/lib/cv.functions";
 
 export const Route = createFileRoute("/_authenticated/")({
   component: Index,
