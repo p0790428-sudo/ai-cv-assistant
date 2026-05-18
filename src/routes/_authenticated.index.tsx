@@ -22,7 +22,7 @@ import { SectionCard, TagList } from "@/components/SectionCard";
 import { extractPdfText } from "@/lib/pdf";
 import { analyzeCV, type CVAnalysis } from "@/lib/cv.functions";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   component: Index,
 });
 
