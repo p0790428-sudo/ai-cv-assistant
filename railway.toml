@@ -1,0 +1,13 @@
+[build]
+  builder = "nixpacks"
+
+[deploy]
+  startCommand = "node dist/server.js"
+  restartPolicyMaxRetries = 5
+
+# Railway environment variables:
+# Set these in the Railway dashboard or via railway up --set
+# - VITE_SUPABASE_URL
+# - VITE_SUPABASE_ANON_KEY
+# - SUPABASE_SERVICE_ROLE_KEY
+# - NODE_ENV=production
